@@ -13,7 +13,8 @@ const nextConfig = {
   env: {
     urlPlataform: process.env.APP_PLATAFORMA_URL,
   },
-  ignorePatterns: ['temp.js', '**/vendor/*.js', './Exercicios'],
+  ignorePatterns: ['./Exercicios'],
+  pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js', ]
 }
 
 module.exports = nextConfig

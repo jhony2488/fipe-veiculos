@@ -7,7 +7,7 @@ export interface SelectInputProps {
   name: string;
   value: string;
   onChange: (value: SelectChangeEvent) => void;
-  options?: string[] | optionProps[];
+  options: string[] | optionProps[] | any;
   placeholder: string;
   error?: string;
 }

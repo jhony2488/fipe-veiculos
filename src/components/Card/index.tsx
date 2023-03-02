@@ -36,21 +36,21 @@ export const CardComponent = () => {
         },
     });
 
-    const getMarcas = useCallback(async ({ tipoVeiculo }) => {
+    const getMarcas = useCallback(async ({ tipoVeiculo }: { tipoVeiculo: string; } ) => {
         if (tipoVeiculo) {
-            setFieldValue('marca', '')
-            setFieldValue('modelo', '')
-            setFieldValue('ano', '')
+            setFieldValue('marca', '');
+            setFieldValue('modelo', '');
+            setFieldValue('ano', '');
             const { data, status } = await api.get(`/${tipoVeiculo}/marcas`);
             if (status === 200) {
                 setOptionsMarca(data)
             }
         }
     }, [values.tipoVeiculo]);
-    const getModelos = useCallback(async ({ marca, tipoVeiculo }) => {
+    const getModelos = useCallback(async ({ marca, tipoVeiculo }: { marca: string | number; tipoVeiculo: string | number }) => {
         if (tipoVeiculo && marca) {
-            setFieldValue('modelo', '')
-            setFieldValue('ano', '')
+            setFieldValue('modelo', '');
+            setFieldValue('ano', '');
             const { data, status } = await api.get(`/${tipoVeiculo}/marcas/${marca}/modelos`);
 
             if (status === 200) {
@@ -64,17 +64,17 @@ export const CardComponent = () => {
         }
     }, []);
 
-    const getAnos = useCallback(async ({ marca, tipoVeiculo, modelos }) => {
+    const getAnos = useCallback(async ({ marca, tipoVeiculo, modelos }: { marca: string | number; tipoVeiculo: string; modelos: string | number; }) => {
         if (tipoVeiculo && marca && modelos) {
-            setFieldValue('ano', '')
+            setFieldValue('ano', '');
             const { data, status } = await api.get(`/${tipoVeiculo}/marcas/${marca}/modelos/${modelos}/anos`);
             if (status === 200) {
-                setOptionsAnos(data)
+                setOptionsAnos(data);
             }
         }
     }, []);
 
-    const getValue = useCallback(async ({ marca, tipoVeiculo, modelos, anos }) => {
+    const getValue = useCallback(async ({ marca, tipoVeiculo, modelos, anos }: { marca: string | number; tipoVeiculo: string; modelos: string | number; anos: string | number; }) => {
         setLoadingButton(true)
         const { data, status } = await api.get(`/${tipoVeiculo}/marcas/${marca}/modelos/${modelos}/anos/${anos}`);
 
@@ -82,7 +82,7 @@ export const CardComponent = () => {
             alert('Valor não encontrado');
         }
         if (status == 200) {
-            localStorage.setItem('valuePrices', JSON.stringify(data))
+            localStorage.setItem('valuePrices', JSON.stringify(data));
             setValuePrice(data);
         }
 
@@ -90,7 +90,7 @@ export const CardComponent = () => {
     }, []);
 
     useEffect(() => {
-        getMarcas({ tipoVeiculo: values.tipoVeiculo })
+        getMarcas({ tipoVeiculo: values.tipoVeiculo });
     }, []);
 
     useEffect(() => {
@@ -103,7 +103,7 @@ export const CardComponent = () => {
 
     useEffect(() => {
         if (values.modelo != '' && values.modelo != null && values.modelo != undefined && values.marca != '' && values.ano != '') {
-            window.location.href = "/result"
+            window.location.href = "/result";
         }
     }, [value]);
 

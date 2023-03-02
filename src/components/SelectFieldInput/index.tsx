@@ -34,7 +34,7 @@ export const SelectFieldInput: React.FC<SelectInputProps> = ({
                             if (selected.length === 0) {
                                 return <SpanPlaceholder>{placeholder}</SpanPlaceholder>;
                             }
-                            return typeof options[0] === 'string' ? value : options?.filter((item) => item.codigo == value)[0].nome;
+                            return typeof options[0] === 'string' ? value : options?.filter((item:{codigo: number | string;}) => item.codigo == value)[0].nome;
                         }}
                     >
                         <MenuItem value='' aria-hidden>
@@ -46,8 +46,8 @@ export const SelectFieldInput: React.FC<SelectInputProps> = ({
                                 {option}
                             </MenuItem>
                         )) :
-                            options ? options?.map((option: optionProps) => (
-                                <MenuItem key={option} value={option.codigo}>
+                            options ? options?.map((option: optionProps, index:number) => (
+                                <MenuItem key={index} value={option.codigo}>
                                     {option.nome}
                                 </MenuItem>
                             )) : <></>
