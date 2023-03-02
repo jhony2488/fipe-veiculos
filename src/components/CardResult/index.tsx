@@ -1,4 +1,5 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react';
+import {Container} from './styles';
 import { useValuePrice } from '../../contexts/Value';
 
 export const CardResult = () => {
@@ -15,12 +16,12 @@ export const CardResult = () => {
     },[])
 
     return (
-        <>
+        <Container>
             <h1>
                 Tabela fipe: preço {getValue?.Marca} {getValue?.AnoModelo}
             </h1>
-            <p>{getValue?.Valor}</p>
-            <p>Este é o preço de compra do veiculo</p>
-        </>
+            <p className='value'>{getValue?.Valor}</p>
+            <p className='description'>Este é o preço de compra do veiculo</p>
+        </Container>
     )
 }

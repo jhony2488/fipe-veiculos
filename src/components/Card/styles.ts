@@ -8,6 +8,10 @@ height: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
+
+h1, p{
+    text-align: center;
+}
 `
 
 export const Wrapper = MUIStyled(Box)(() => ({

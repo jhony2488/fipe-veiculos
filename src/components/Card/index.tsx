@@ -1,8 +1,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { useFormik } from 'formik';
-import { useMediaQuery } from 'react-responsive';
-import { useValuePrice, ValueContext } from '../../contexts/Value';
+import { useValuePrice } from '../../contexts/Value';
 import api from '../../services/api';
 import {
     Card,
@@ -112,6 +111,8 @@ export const CardComponent = () => {
         <Card variant="outlined">
             <Container>
                 <Wrapper>
+                    <h1>Tabela Fipe</h1>
+                    <p>Consulte o valor de um veiculo de forma gratuita</p>
                     <form onSubmit={handleSubmit}>
                         <SelectFieldInput
                             name='tipoVeiculo'

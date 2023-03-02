@@ -8,9 +8,11 @@ export const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   .content {
+    width: 100%;
     display: grid;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 5px;
   }
 `;
