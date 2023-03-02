@@ -3,7 +3,7 @@ import { useValuePrice } from '../../contexts/Value';
 
 export const CardResult = () => {
     const { value } = useValuePrice();
-    const [getValue, setValue] =  useState<{marca: string; Valor: string; AnoModelo: number}>()
+    const [getValue, setValue] =  useState<{Marca: string; Valor: string; AnoModelo: number}>()
 
     useEffect(()=>{
         const valueLocal=localStorage.getItem('valuePrices')
