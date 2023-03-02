@@ -20,9 +20,9 @@ export const SelectFieldInput: React.FC<SelectInputProps> = ({
 
     return (
         <div>
-            <Container sx={{ minWidth: 315 }}>
+            <Container sx={{ minWidth: 280 }}>
                 <Label id={label}>{label}</Label>
-                <ControlForm fullWidth >
+                <ControlForm sx={{ minWidth: 280 }}>
                     <Select
                         name={name}
                         labelId={label}

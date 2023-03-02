@@ -1,19 +1,19 @@
-import React, {useEffect, useState} from 'react';
-import {Container} from './styles';
+import React, { useEffect, useState } from 'react';
+import { Container } from './styles';
 import { useValuePrice } from '../../contexts/Value';
 
 export const CardResult = () => {
     const { value } = useValuePrice();
-    const [getValue, setValue] =  useState<{Marca: string; Valor: string; AnoModelo: number}>()
+    const [getValue, setValue] = useState<{ Marca: string; Valor: string; AnoModelo: number }>()
 
-    useEffect(()=>{
-        const valueLocal=localStorage.getItem('valuePrices')
+    useEffect(() => {
+        const valueLocal = localStorage.getItem('valuePrices')
         const valuePrice = JSON.parse(valueLocal ? valueLocal : '{}');
-    
+
         const result = value ? value : valuePrice
-    
+
         setValue(result)
-    },[])
+    }, [])
 
     return (
         <Container>

@@ -13,6 +13,7 @@ import { selectsSchemas } from './schemas'
 import {
     Container,
     Wrapper,
+    Division ,
 } from './styles';
 
 export const CardComponent = () => {
@@ -123,6 +124,7 @@ export const CardComponent = () => {
                             onChange={handleChange}
                             error={touched.tipoVeiculo ? errors.tipoVeiculo : ''}
                         />
+                        <Division />
                         <SelectFieldInput
                             name='marca'
                             value={values.marca}
@@ -132,6 +134,7 @@ export const CardComponent = () => {
                             onChange={handleChange}
                             error={touched.marca ? errors.marca : ''}
                         />
+                        <Division />
                         {values.marca != '' && values.marca != null && values.marca != undefined
                             ? <SelectFieldInput
                                 name='modelo'
@@ -143,6 +146,7 @@ export const CardComponent = () => {
                                 error={touched.modelo ? errors.modelo : ''}
                             /> : <></>
                         }
+                        <Division />
                         {values.modelo != '' && values.modelo != null && values.modelo != undefined ? <SelectFieldInput
                             name='ano'
                             value={values.ano}
@@ -152,6 +156,7 @@ export const CardComponent = () => {
                             onChange={handleChange}
                             error={touched.ano ? errors.ano : ''}
                         /> : <></>}
+                        <Division />
                         <Button
                             disabled={!(values.modelo != '' && values.modelo != null && values.modelo != undefined && values.marca != '' && values.ano != '')}
                             loading={loadingButton}

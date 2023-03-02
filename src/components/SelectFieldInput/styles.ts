@@ -6,6 +6,7 @@ export const Container = MUIStyled(Box)({
   legend: {
     display: 'none',
   },
+  textAlign: 'left'
 });
 
 export const Label = MUIStyled(InputLabel)(() => ({

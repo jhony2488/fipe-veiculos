@@ -4,7 +4,6 @@ export const Container = styled.div`
   width: 600px;
   height: 200px;
   display: grid;
-  justify-content: center;
   justify-items: center;
   align-items: center;
   text-align: center;
@@ -13,8 +12,8 @@ export const Container = styled.div`
   padding-bottom: 10px;
   color: white;
   @media (max-width: 600px) {
-    width: 300px;
-    height: 180px;
+    width: 90%;
+    height: 100%;
   }
   .value {
     background: green;
