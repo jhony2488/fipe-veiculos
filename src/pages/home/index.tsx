@@ -1,4 +1,4 @@
-'use client';
+
 import React from 'react';
 import {CardComponent} from '../../components/Card'
 import { Wrap } from './styles';

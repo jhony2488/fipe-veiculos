@@ -1,7 +1,6 @@
-'use client';
+
 import React from 'react';
-import { Grid } from '@mui/material';
-import {CardComponent} from '../../components/Card'
+import {CardResult} from '../../components/CardResult';
 import { Wrap } from './styles';
 
 // import { Container } from './styles';
@@ -11,7 +10,7 @@ const Result: React.FC = () => {
   return (
     <Wrap>
       <div className='content'>
-        <CardComponent/>
+        <CardResult/>
       </div>
     </Wrap>
   );

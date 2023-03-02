@@ -1,4 +1,4 @@
-'use client';
+
 import Loading from '../Loading'
 import React from 'react'
 import { PropsButton } from './types'

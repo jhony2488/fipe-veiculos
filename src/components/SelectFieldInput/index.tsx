@@ -1,4 +1,4 @@
-'use client';
+
 import * as React from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';

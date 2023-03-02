@@ -1,7 +1,8 @@
-'use client';
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { useFormik } from 'formik';
 import { useMediaQuery } from 'react-responsive';
+import { useValuePrice, ValueContext } from '../../contexts/Value';
 import api from '../../services/api';
 import {
     Card,
@@ -20,6 +21,8 @@ export const CardComponent = () => {
     const [optionsMarca, setOptionsMarca] = useState([]);
     const [optionsModelos, setOptionsModelos] = useState([]);
     const [optionsAnos, setOptionsAnos] = useState([]);
+
+    const { setValuePrice, value } = useValuePrice();
 
     const { handleSubmit, handleChange, values, touched, errors, setFieldValue } = useFormik({
         initialValues: {
@@ -77,10 +80,11 @@ export const CardComponent = () => {
         const { data, status } = await api.get(`/${tipoVeiculo}/marcas/${marca}/modelos/${modelos}/anos/${anos}`);
 
         if (status == 404) {
-            alert('Valor não encontrado')
+            alert('Valor não encontrado');
         }
-        if(status==200){
-window.location.href="/result"
+        if (status == 200) {
+            localStorage.setItem('valuePrices', JSON.stringify(data))
+            setValuePrice(data);
         }
 
         setLoadingButton(false);
@@ -97,6 +101,12 @@ window.location.href="/result"
     useEffect(() => {
         getAnos({ marca: values.marca, tipoVeiculo: values.tipoVeiculo, modelos: values.modelo });
     }, [values.modelo]);
+
+    useEffect(() => {
+        if (values.modelo != '' && values.modelo != null && values.modelo != undefined && values.marca != '' && values.ano != '') {
+            window.location.href = "/result"
+        }
+    }, [value]);
 
     return (
         <Card variant="outlined">

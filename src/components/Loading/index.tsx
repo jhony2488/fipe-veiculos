@@ -1,5 +1,5 @@
 
-'use client';
+
 import React from 'react'
 import {CircularProgress, CircularProgressProps} from '@mui/material';
 import { Container } from './styles'
