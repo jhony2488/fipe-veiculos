@@ -24,7 +24,7 @@ grid-template-columns: 1fr 1fr;
   display: grid;
   justify-items: center;
   h1{
-    font-family: 'Manrope';
+    font-family: Roboto;
     font-style: normal;
     font-weight: 800;
     font-size: 24px;

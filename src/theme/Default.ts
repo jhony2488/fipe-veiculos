@@ -3,13 +3,13 @@ import { createTheme } from '@mui/material';
 export const DefaultTheme = createTheme({
   palette: {
     primary: {
-      main: '#E54D2E',
-      dark: '#FB887A',
+      main: '#9400D3',
+      dark: '#993399',
       contrastText: '#393939',
     },
     secondary: {
-      main: '#F93822 ',
-      dark: '#FB887A',
+      main: '#9400D3',
+      dark: '#993399',
       contrastText: '#393939',
     },
     info: {
@@ -33,6 +33,6 @@ export const DefaultTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Manrope',
+    fontFamily: 'Roboto',
     }
 });

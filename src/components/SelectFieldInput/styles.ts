@@ -43,7 +43,7 @@ export const ControlForm = MUIStyled(FormControl)<ControlFormProps>(({ inputErro
 }));
 
 export const SpanPlaceholder = styled.span`
-  font-family: 'Manrope';
+  font-family: Roboto;
   font-size: 0.875rem;
   font-weight: 400;
   color: #C2C4CD;
@@ -52,6 +52,6 @@ export const SpanPlaceholder = styled.span`
 export const ErrorMessage = styled.span`
   position: absolute;
   color: #f44336;
-  font-family: 'Manrope';
+  font-family: Roboto;
   font-size: 0.7rem;
 `;
