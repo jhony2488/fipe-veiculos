@@ -26,7 +26,7 @@ export const CardComponent = () => {
 
     const { handleSubmit, handleChange, values, touched, errors, setFieldValue } = useFormik({
         initialValues: {
-            tipoVeiculo: 'carro',
+            tipoVeiculo: 'carros',
             marca: '',
             modelo: '',
             ano: '',
