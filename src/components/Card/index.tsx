@@ -48,6 +48,7 @@ export const CardComponent = () => {
             }
         }
     }, [values.tipoVeiculo]);
+    
     const getModelos = useCallback(async ({ marca, tipoVeiculo }: { marca: string | number; tipoVeiculo: string | number }) => {
         if (tipoVeiculo && marca) {
             setFieldValue('modelo', '');
@@ -93,6 +94,9 @@ export const CardComponent = () => {
     useEffect(() => {
         getMarcas({ tipoVeiculo: values.tipoVeiculo });
     }, []);
+    useEffect(() => {
+        getMarcas({ tipoVeiculo: values.tipoVeiculo });
+    }, [touched.tipoVeiculo]);
 
     useEffect(() => {
         getModelos({ marca: values.marca, tipoVeiculo: values.tipoVeiculo });
