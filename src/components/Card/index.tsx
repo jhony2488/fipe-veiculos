@@ -96,7 +96,7 @@ export const CardComponent = () => {
     }, []);
     useEffect(() => {
         getMarcas({ tipoVeiculo: values.tipoVeiculo });
-    }, [touched.tipoVeiculo]);
+    }, [values.tipoVeiculo]);
 
     useEffect(() => {
         getModelos({ marca: values.marca, tipoVeiculo: values.tipoVeiculo });
