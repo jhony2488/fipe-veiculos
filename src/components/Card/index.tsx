@@ -47,7 +47,7 @@ export const CardComponent = () => {
                 setOptionsMarca(data)
             }
         }
-    }, [values.tipoVeiculo]);
+    }, []);
     
     const getModelos = useCallback(async ({ marca, tipoVeiculo }: { marca: string | number; tipoVeiculo: string | number }) => {
         if (tipoVeiculo && marca) {
